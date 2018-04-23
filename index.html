@@ -1,0 +1,471 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="jspdf.min.js"></script>
+	<script type="text/javascript" src="html2canvas.js"></script>
+	<script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+	<script type="text/javascript" src="js/js.js">
+	</script>
+
+	<title>table</title>
+</head>
+
+<body>
+	<div class="container message text-center">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<img src="images/animated_icon.gif" alt="Downloaded" class="downloaded">
+			</div>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<h1 class="text-danger"> Your pdf has been downloaded </h1>
+				<p>Lorem ipsum dolor sit amet, morbi egestas donec ante massa, dui quis feugiat sem, potenti in sodales tempus proin, ac aenean duis nulla quis quisque duis. Wisi curae urna class enim vivamus vivamus, at erat et. Ligula fringilla, nunc sed nonummy,
+					sagittis lorem ultrices. Quam luctus turpis scelerisque mattis, arcu diam ornare libero. Purus ut lobortis non donec. Montes iaculis mauris pretium sed est, diam eget eros maecenas in arcu, tincidunt fringilla felis pede. Mauris ut sollicitudin dignissim,
+					sit faucibus hac velit, dictum nec felis sem cras, anim ac varius malesuada ligula. Vestibulum vitae parturient, maecenas eget quam congue.</p>
+			</div>
+		</div>
+	</div>
+	<div class="container result" id="printArea">
+		<div class="logo text-center">
+			<img src="images/Logo.png" alt="logo" class="img-fluid logo-image">
+		</div>
+		<div class="">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 sizePrint">
+				<form class="financea">
+					<table class="table table-hover table-bordered" style="width:100%;">
+						<thead>
+							<tr class="table-active">
+								<th colspan="2" class="bg-primary"><b>General Information<b></b></b>
+								</th>
+							</tr>
+							<tr>
+								<td style="width:60%;">Course:</td>
+								<td><input type="text" class="form-control" name="course" placeholder="Example"></td>
+							</tr>
+							<tr>
+								<td>General manager</td>
+								<td>
+									<input type="text" class="form-control" name="manager" placeholder="Example">
+								</td>
+							</tr>
+							<tr>
+								<td>Superintendent:</td>
+								<td>
+									<input type="text" class="form-control" name="super" placeholder="Example">
+								</td>
+							</tr>
+							<tr>
+
+								<td>Total bunker area, Ft2</td>
+								<td>
+									<input type="text" class="form-control" name="bunker" placeholder="">
+								</td>
+							</tr>
+						</thead>
+					</table>
+				</form>
+				<form class="financea">
+					<table class="table table-hover table-bordered" style="width:100%;">
+						<thead>
+
+							<tr class="table-active">
+								<th colspan="4" class="bg-primary">CAPEX</th>
+							</tr>
+							<tr>
+								<td style="width:50%;"> Bunker renovation</td>
+								<td style="width:20%">CAPEX</td>
+								<td style="width:10%;">Lifespan</td>
+								<td style="width:20%;">Yearly depreciation</td>
+
+							</tr>
+							<tr>
+								<td>Bunker renovation without any bunker liner</td>
+								<td>
+									<input type="text" class="form-control" name="capex1" placeholder="">
+								</td>
+								<td>
+									<input type="text" class="form-control" name="life1" placeholder="">
+								</td>
+								<td>
+									<input type="text" class="form-control" name="yd1" placeholder="">
+								</td>
+
+							</tr>
+							<tr>
+								<td>Bunker renovation with Capillary Concrete</td>
+								<td>
+									<input type="text" class="form-control" name="capex2" placeholder="">
+								</td>
+								<td>
+									<input type="text" class="form-control" name="life2" placeholder="">
+								</td>
+								<td>
+									<input type="text" class="form-control" name="yd2" placeholder="">
+								</td>
+							</tr>
+							<tr>
+
+
+								<td>Difference</td>
+								<td>
+									<input type="text" class="form-control" name="capex3">
+								</td>
+								<td>
+									<input type="text" class="form-control" name="life3">
+								</td>
+								<td>
+									<input type="text" class="form-control" name="yd3">
+								</td>
+							</tr>
+						</thead>
+					</table>
+				</form>
+
+				<form class="financea">
+					<table class="table table-hover table-bordered" style="width:100%;">
+						<thead>
+
+							<tr class="table-active">
+								<tr class="table-active">
+									<th colspan="2" class="bg-primary">Financial Analysis</th>
+								</tr>
+								<tr>
+									<td>Estimated yearly revenue restoration </td>
+									<td><input type="text" class="form-control" name="yearlyrev" value="0"></td>
+								</tr>
+								<tr>
+									<td>% restoration</td>
+									<td><input type="text" class="form-control" name="restor" value="0"></td>
+
+								</tr>
+								<tr>
+									<td>Estimated yearly cost savings, excluding depreciation </td>
+									<td>
+										<input type="text" class="form-control" name="costsaving" value="0">
+									</td>
+								</tr>
+								<tr>
+									<td>% cost savings</td>
+									<td>
+										<input type="text" class="form-control" name="cost" value="0">
+									</td>
+								</tr>
+							</tr>
+						</thead>
+					</table>
+				</form>
+				<form class="financea">
+					<table class="table table-hover table-bordered" style="width:100%;">
+						<thead>
+							<tr>
+								<td>Estimated yearly increase in EBITDA</td>
+								<td>
+									<input type="text" class="form-control" name="Ebi" value="0">
+								</td>
+								<td>
+									Estimated yearly ROI
+								</td>
+								<td>
+									<input type="text" class="form-control" name="roi" value="0">
+								</td>
+							</tr>
+
+
+							<tr>
+								<td>% increase</td>
+								<td><input type="text" class="form-control" name="increase" value="0"></td>
+
+							</tr>
+
+							<tr>
+								<td>Accumulated increase in EBITDA during a 15-year period</td>
+								<td>
+									<input type="text" class="form-control" name="accdur" value="0">
+								</td>
+								<td>
+									Estimated payback time
+
+								</td>
+								<td>
+									<input type="text" class="form-control" name="payback" value="0">
+								</td>
+							</tr>
+
+						</thead>
+					</table>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="container tablesection">
+		<div class="row">
+			<div class="logo text-center">
+				<img src="images/Logo.png" alt="logo" class="img-fluid logo-image">
+			</div>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+				<h1>Please provide the below details</h1>
+			</div>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<form class="rfc">
+					<table class="table table-hover table-bordered">
+						<thead>
+
+							<tr class="table-active">
+								<th colspan="3" class="bg-primary"><b>Project Information<b></th>
+ </tr>
+ <td>1</td>
+	<td>Course name</td>
+	<td><input type="text" class="form-control" name="CourseName" placeholder=""></td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>General manager</td>
+									<td>
+										<input type="text" class="form-control" name="GeneralManager" placeholder="">
+									</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>Superintendent</td>
+									<td>
+										<input type="text" class="form-control" name="Superintendent" placeholder="">
+									</td>
+								</tr>
+								<tr>
+									<td>4</td>
+
+									<td>How many days per year is your course open?</td>
+									<td>
+										<input type="text" class="form-control" name="CourseOpen" placeholder="" required>
+									</td>
+								</tr>
+								<tr class="table-active">
+									<th colspan="3" class="bg-primary">Size of project</th>
+								</tr>
+								<tr>
+									<td>5</td>
+									<td>Do you know the size of the total bunker area?</td>
+									<td>
+					 <select name="SizeOfProject" class="form-control" required>
+						 <option value = "">----Select----</option>
+						 <option value = "Yes">Yes</option>
+						 <option value = "No">No</option>
+					 </select>
+
+									</td>
+								</tr>
+								<tr>
+									<td>6</td>
+									<td>If the total area is known, Please enter the Total bunker area, Ft2</td>
+									<td>
+										<input type="text" class="form-control" name="BunkerArea" placeholder="">
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td>If the total area is not known, please select from the options below</td>
+									<td>
+									</td>
+								</tr>
+								<tr>
+									<td>7</td>
+									<td>No. of Holes</td>
+									<td>
+					 <select name="No.OfHoles" class="form-control">
+						 <option value = "0.5">9</option>
+						 <option value = "1">18</option>
+						 <option value = "1.5">27</option>
+						 <option value = "2">36</option>
+						 <option value = "3">54</option>
+						 <option value = "4">72</option>
+					 </select>
+				 </td>
+			 </tr>
+			 <tr>
+				 <td>8</td>
+				 <td>Amount of bunkers per 18 holes</td>
+				 <td>
+					 <select name="AmountHoles" class="form-control">
+						 <option value = "40">Low amount (40)</option>
+						 <option value = "60">Low average (60)</option>
+						 <option value = "80">High average (80)</option>
+						 <option value = "100">High amount (100)</option>
+				 					 </select>
+									</td>
+								</tr>
+								<tr>
+									<td>9</td>
+									<td>Average size of bunkers</td>
+									<td>
+										<select name="AverageSize" class="form-control">
+				 						 <option value = "None">----Please Select----</option>
+				 						 <option value = "1500">Very large bunkers (1,500 Ft2)</option>
+				 						 <option value = "1250">Large bunkers (1,250 Ft2))</option>
+				 						 <option value = "1000">Average bunkers (1,000 Ft2)</option>
+				 						 <option value = "750">Small bunkers (750 Ft2)</option>
+				 						 <option value = "500">Very small bunkers (500 Ft2)</option>
+				 					 </select>
+									</td>
+								</tr>
+								<tr class="table-active">
+									<th></th>
+									<th>Total Bunker area, Ft2</th>
+									<th><input type="text" class="form-control" name="totleBunkerArea" value="0" placeholder="" disabled></th>
+								 </tr>
+								 <tr class="table-active">
+									 <th colspan="3" class="bg-primary">Financial Input</th>
+								 </tr>
+								 <tr class="table-active">
+									 <th colspan="3">Current financials</th>
+								 </tr>
+								<tr>
+									<td>10</td>
+									<td>Current yearly revenue </td>
+									<td>
+										<input type="text" class="form-control" name="Revenue" placeholder="" required>
+									</td>
+								</tr>
+								<tr>
+									<td>11</td>
+									<td>Current yearly EBITDA (earnings before interest, taxes, depreciation & amortization)</td>
+									<td>
+										<input type="text" class="form-control" name="EBITDA" placeholder="" required>
+									</td>
+								</tr>
+								<tr>
+									<td>12</td>
+									<td>Current yearly Net Income</td>
+									<td>
+										<input type="text" class="form-control" name="NetIncome" placeholder="" required>
+									</td>
+								</tr>
+								<tr>
+									<td>13</td>
+									<td>Corporate tax rate</td>
+									<td>
+										<input type="text" class="form-control" name="TaxRate" placeholder="%" required>
+									</td>
+								</tr>
+								<tr class="table-active">
+									<th colspan="3" class="bg-primary"><b>Revenue</b></th>
+							</tr>
+							<tr>
+								<td>14</td>
+								<td>Yearly revenue restoration due to better playing condition and esthetics associated with CC</td>
+								<td>
+									<select name="YearlyRevenue" class="form-control">
+						 <option value = "0">0%</option>
+						 <option value = "3">3%</option>
+						 <option value = "6">6%</option>
+						 <option value = "9">9%</option>
+					 </select></td>
+							</tr>
+							<tr class="table-active">
+								<th colspan="3" class="bg-primary"><b>Costs</b></th>
+							</tr>
+							<tr class="table-active">
+								<th colspan="3">Undelrying assumptions</th>
+							</tr>
+
+							<tr>
+								<td>15</td>
+								<td>Labor cost per hour</td>
+								<td>
+									<input type="text" class="form-control" name="LaborCost" placeholder="">
+								</td>
+							</tr>
+							<tr>
+								<td>16</td>
+								<td>Sand cost per ton</td>
+								<td>
+									<select name="SandCost" class="form-control">
+						 <option value = "25">25</option>
+						 <option value = "50">50</option>
+						 <option value = "75">75</option>
+					 </select>
+								</td>
+							</tr>
+							<tr>
+								<td>17</td>
+								<td>Do you know the amount of man hours needed each year to repair bunkers after rain storms negatively effecting the playability of your bunkers?</td>
+								<td>
+									<select name="DoYouKnowTheAmountOfManHours" class="form-control" required>
+						 <option value = "">----Select----</option>
+						 <option value = "Yes">Yes</option>
+						 <option value = "No">No</option>
+					 </select>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>If the total amount of man hours is known,please enter the total amount below</td>
+								<td>
+								</td>
+							</tr>
+							<tr>
+								<td>18</td>
+								<td>Total amount of man hours spent on bunker maintenance due to rain storms per year</td>
+								<td>
+									<input type="text" class="form-control" name="RainStormsPerYear" placeholder="">
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>If the total amount of man hours is not known, Please select from the options below
+								</td>
+								<td>
+								</td>
+							</tr>
+							<tr>
+								<td>19</td>
+								<td>How many days per year does rain storms negatively effect the playability of your bunkers?
+								</td>
+								<td>
+									<select name="PlayabilityOfBunkers" class="form-control">
+				 						 <option value = "0">----Please Select----</option>
+				 						 <option value = "10">10</option>
+				 						 <option value = "20">20</option>
+				 						 <option value = "30">30</option>
+				 						 <option value = "40">40</option>
+				 						 <option value = "50">50</option>
+				 					 </select>
+								</td>
+							</tr>
+							<tr>
+								<td>20</td>
+								<td>How steep are your bunkers? (steepness effects the level of damage, thus also the amount of man hours required to repair the damages)
+								</td>
+								<td>
+									<select name="HowSteepAre" class="form-control">
+						 <option value = "0">----Please Select----</option>
+						 <option value = "0.002">Steep (equivalent to 500 Ft2  per man hour)</option>
+						 <option value = "0.001">Average (equivalent to 1,000 Ft2 per man hour)</option>
+						 <option value = "0.0005">Flat (equivalent to 2,000 Ft2 per man hour)</option>
+					 </select>
+								</td>
+							</tr>
+							<tr class="table-active">
+								<th></th>
+								<th>Total amount of man hours spent on bunker maintenance due to rain storms</th>
+								<th><input type="text" class="form-control" name="totalHourMaintense" placeholder="" disabled></th>
+							</tr>
+							</tbody>
+					</table>
+					<input type="Submit" name="Submit" value="Submit & Download PDF" class="btn btn-info pull-right">
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="space50">
+	</div>
+</body>
+
+</html>
